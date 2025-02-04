@@ -28,7 +28,7 @@ public class AppTest {
         list.add(20);
 
         list.remove(5);
-
+        list.printList();
     }
 
 }

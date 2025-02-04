@@ -68,4 +68,13 @@ public class SingleLinkedList {
     public int value() {
         return this.head.value;
     }
+
+    public void printList() {
+        Node current = this.head;
+        for (int i = 0; i < size-1; i++) {
+            System.out.print(current.value + " -> ");
+            current = current.next;
+        }
+        System.out.println(current.value);
+    }
 }
