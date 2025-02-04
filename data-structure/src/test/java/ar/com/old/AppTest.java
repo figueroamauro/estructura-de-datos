@@ -1,7 +1,7 @@
 package ar.com.old;
 
 
-import ar.com.old.nodes.SingleLinkedList;
+import ar.com.old.lists.SingleLinkedList;
 
 public class AppTest {
     public static void main(String[] args) {

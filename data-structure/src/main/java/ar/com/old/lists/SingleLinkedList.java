@@ -1,6 +1,7 @@
-package ar.com.old.nodes;
+package ar.com.old.lists;
 
 import ar.com.old.exceptions.EmptyLinkedListException;
+import ar.com.old.nodes.Node;
 
 public class SingleLinkedList {
     private Node head;
@@ -18,8 +19,10 @@ public class SingleLinkedList {
             return;
         }
         Node current = this.head;
-        this.head = new Node(value);
-        this.head.next = current;
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = new Node(value);
         this.size++;
     }
 

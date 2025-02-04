@@ -1,4 +1,4 @@
-package ar.com.old.nodes;
+package ar.com.old.lists;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -32,7 +32,7 @@ public class SingleLinkedListTest {
     void shouldReturnHeadValue() {
         list.add(4);
         list.add(2);
-        assertEquals(2,list.value());
+        assertEquals(4,list.value());
     }
 
     @Test
@@ -79,7 +79,7 @@ public class SingleLinkedListTest {
         list.printList();
         System.setOut(originalOut);
 
-        assertEquals("3 -> 2 -> 1\n",outputStream.toString());
+        assertEquals("1 -> 2 -> 3\n",outputStream.toString());
     }
 
     private void completeList() {
