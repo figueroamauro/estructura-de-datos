@@ -39,4 +39,16 @@ public class SingleLinkedListTest {
     Exception exception =assertThrows(EmptyLinkedListException.class, () -> list.remove(1));
     assertEquals("La lista esta vacia", exception.getMessage());
     }
+
+    @Test
+    void shouldVerifyIfNodeExists() {
+        SingleLinkedList list = new SingleLinkedList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        assertTrue(list.contains(1));
+        assertTrue(list.contains(2));
+        assertTrue(list.contains(3));
+        assertFalse(list.contains(4));
+    }
 }

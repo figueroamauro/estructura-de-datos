@@ -25,16 +25,28 @@ public class SingleLinkedList {
 
 
     public void remove(int value) {
-        if (this.head == null) {
+        Node current = this.head;
+        if (current == null) {
             throw new EmptyLinkedListException("La lista esta vacia");
         }
-        while (this.head != null) {
-            if (this.head.value == value) {
-                this.head = this.head.next;
+        while (current != null) {
+            if (current.value == value) {
+                current = current.next;
                 this.size--;
                 return;
             }
-            this.head = this.head.next;
+            current = current.next;
         }
+    }
+
+    public boolean contains(int value) {
+        Node current = this.head;
+        while (current != null) {
+            if (current.value == value) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
     }
 }
