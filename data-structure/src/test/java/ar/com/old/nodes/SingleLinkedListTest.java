@@ -11,6 +11,13 @@ public class SingleLinkedListTest {
         assertNotNull(list);
         assertNull(list.head);
         assertEquals(0, list.size);
+    }
 
+    @Test
+    void shouldAddNode() {
+        SingleLinkedList list = new SingleLinkedList();
+        list.add(1);
+        assertEquals(1, list.head.value);
+        assertEquals(1, list.size);
     }
 }
