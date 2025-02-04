@@ -4,7 +4,7 @@ import ar.com.old.exceptions.EmptyLinkedListException;
 import ar.com.old.nodes.Node;
 
 public class SingleLinkedList {
-    private Node head;
+    public Node head;
     private int size;
 
     public SingleLinkedList() {
@@ -66,6 +66,10 @@ public class SingleLinkedList {
 
     public int size(){
         return this.size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 
     public int value() {
