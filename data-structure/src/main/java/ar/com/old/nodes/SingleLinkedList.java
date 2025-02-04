@@ -3,8 +3,8 @@ package ar.com.old.nodes;
 import ar.com.old.exceptions.EmptyLinkedListException;
 
 public class SingleLinkedList {
-    public Node head;
-    public int size;
+    private Node head;
+    private int size;
 
     public SingleLinkedList() {
         this.head = null;
@@ -27,14 +27,22 @@ public class SingleLinkedList {
     public void remove(int value) {
         if (isEmpty()) {
             throw new EmptyLinkedListException("La lista esta vacia");
-        }
-        while (!isEmpty()) {
-            if (head.value == value) {
-                head = head.next;
+        } else {
+            if (this.head.value == value) {
+                this.head = this.head.next;
                 this.size--;
                 return;
             }
-            head = head.next;
+        }
+
+        Node current = this.head;
+        while (current.next != null) {
+            if (current.next.value == value) {
+                current.next = current.next.next;
+                this.size--;
+                return;
+            }
+            current = current.next;
         }
     }
 
@@ -51,5 +59,13 @@ public class SingleLinkedList {
 
     public boolean isEmpty() {
         return this.head == null;
+    }
+
+    public int size(){
+        return this.size;
+    }
+
+    public int value() {
+        return this.head.value;
     }
 }

@@ -1,38 +1,34 @@
 package ar.com.old;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+import ar.com.old.nodes.SingleLinkedList;
+
+public class AppTest {
+    public static void main(String[] args) {
+        SingleLinkedList list = new SingleLinkedList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+        list.add(7);
+        list.add(8);
+        list.add(9);
+        list.add(10);
+        list.add(11);
+        list.add(12);
+        list.add(13);
+        list.add(14);
+        list.add(15);
+        list.add(16);
+        list.add(17);
+        list.add(18);
+        list.add(19);
+        list.add(20);
+
+        list.remove(5);
+
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }

@@ -16,22 +16,21 @@ public class SingleLinkedListTest {
     @Test
     void shouldCreateSingleLinkedList() {
         assertNotNull(list);
-        assertNull(list.head);
-        assertEquals(0, list.size);
+        assertEquals(0, list.size());
     }
 
     @Test
     void shouldAddNode() {
         list.add(1);
-        assertEquals(1, list.head.value);
-        assertEquals(1, list.size);
+        assertEquals(1, list.size());
+        assertEquals(1, list.value());
     }
 
     @Test
     void shouldRemoveNode() {
         completeList();
         list.remove(2);
-        assertEquals(2, list.size);
+        assertEquals(2, list.size());
     }
 
     @Test
