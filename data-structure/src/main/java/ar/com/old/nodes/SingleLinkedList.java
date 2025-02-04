@@ -12,7 +12,7 @@ public class SingleLinkedList {
     }
 
     public void add(int value) {
-        if (this.head == null) {
+        if (isEmpty()) {
             this.head = new Node(value);
             this.size++;
             return;
@@ -25,17 +25,16 @@ public class SingleLinkedList {
 
 
     public void remove(int value) {
-        Node current = this.head;
-        if (current == null) {
+        if (isEmpty()) {
             throw new EmptyLinkedListException("La lista esta vacia");
         }
-        while (current != null) {
-            if (current.value == value) {
-                current = current.next;
+        while (!isEmpty()) {
+            if (head.value == value) {
+                head = head.next;
                 this.size--;
                 return;
             }
-            current = current.next;
+            head = head.next;
         }
     }
 
@@ -48,5 +47,9 @@ public class SingleLinkedList {
             current = current.next;
         }
         return false;
+    }
+
+    public boolean isEmpty() {
+        return this.head == null;
     }
 }

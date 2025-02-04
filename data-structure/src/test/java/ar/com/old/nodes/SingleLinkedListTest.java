@@ -49,6 +49,11 @@ public class SingleLinkedListTest {
         assertFalse(list.contains(4));
     }
 
+    @Test
+    void shouldVerifyEmptyList() {
+        assertTrue(list.isEmpty());
+    }
+
     private void completeList() {
         list.add(1);
         list.add(2);
