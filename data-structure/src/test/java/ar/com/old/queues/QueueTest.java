@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class QueueTest {
 
     @Test
-    void shouldAddNodeToTail(){
+    void shouldAddNodeToTail() {
         Queue queue = new Queue();
         queue.add(1);
         assertEquals(1, queue.last.value);
@@ -29,7 +29,16 @@ class QueueTest {
     @Test
     void shouldThrowException() {
         Queue queue = new Queue();
-        Exception exception = assertThrows(EmptyQueueException.class,queue::remove);
+        Exception exception = assertThrows(EmptyQueueException.class, queue::remove);
+        Exception exception2 = assertThrows(EmptyQueueException.class, queue::peek);
         assertEquals("La cola esta vacia", exception.getMessage());
+        assertEquals("La cola esta vacia", exception2.getMessage());
+    }
+
+    @Test
+    void shouldReturnFirstNode() {
+        Queue queue = new Queue();
+        queue.add(1);
+        assertEquals(1, queue.peek());
     }
 }

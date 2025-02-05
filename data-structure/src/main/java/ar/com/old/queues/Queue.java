@@ -24,4 +24,12 @@ public class Queue {
         }
        first = first.next;
     }
+
+    public int peek() {
+        if (first == null) {
+            throw new EmptyQueueException("La cola esta vacia");
+        }
+        return first.value;
+    }
+
 }
