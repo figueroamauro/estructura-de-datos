@@ -1,5 +1,6 @@
 package ar.com.old.queues;
 
+import ar.com.old.exceptions.EmptyQueueException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -23,5 +24,12 @@ class QueueTest {
         assertEquals(1, queue.first.value);
         queue.remove();
         assertEquals(3, queue.first.value);
+    }
+
+    @Test
+    void shouldThrowException() {
+        Queue queue = new Queue();
+        Exception exception = assertThrows(EmptyQueueException.class,queue::remove);
+        assertEquals("La cola esta vacia", exception.getMessage());
     }
 }
