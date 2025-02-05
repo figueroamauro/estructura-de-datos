@@ -14,4 +14,14 @@ class QueueTest {
         queue.add(3);
         assertEquals(3, queue.last.value);
     }
+
+    @Test
+    void shouldRemoveFirstNode() {
+        Queue queue = new Queue();
+        queue.add(1);
+        queue.add(3);
+        assertEquals(1, queue.first.value);
+        queue.remove();
+        assertEquals(3, queue.first.value);
+    }
 }
