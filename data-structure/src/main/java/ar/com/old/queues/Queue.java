@@ -9,7 +9,7 @@ public class Queue {
     public Node last;
 
     public void add(int i) {
-        if (first == null) {
+        if (isEmpty()) {
             first = new Node(i);
             last = first;
         } else {
@@ -19,17 +19,21 @@ public class Queue {
     }
 
     public void remove() {
-        if (first == null) {
+        if (isEmpty()) {
             throw new EmptyQueueException("La cola esta vacia");
         }
        first = first.next;
     }
 
     public int peek() {
-        if (first == null) {
+        if (isEmpty()) {
             throw new EmptyQueueException("La cola esta vacia");
         }
         return first.value;
+    }
+
+    public boolean isEmpty() {
+        return first == null;
     }
 
 }

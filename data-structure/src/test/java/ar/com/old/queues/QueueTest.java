@@ -41,4 +41,12 @@ class QueueTest {
         queue.add(1);
         assertEquals(1, queue.peek());
     }
+
+    @Test
+    void shouldVerifyEmpty() {
+        Queue queue = new Queue();
+        assertTrue(queue.isEmpty());
+        queue.add(1);
+        assertFalse(queue.isEmpty());
+    }
 }
