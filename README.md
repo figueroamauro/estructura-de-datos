@@ -1,7 +1,7 @@
-# Estructuras de datos y complejidad computacional.
+# Estructuras de datos y complejidad algorítmica.
 
 ## Creación de estructuras de datos y práctica con ejercicios.
-### Se intenta resolver los ejercicios con la mejor complejidad temporal posible(Big O).
+### Se intenta resolver los ejercicios con la complejidad mas óptima posible(Big O).
 - Listas enlazadas.
 - Colas.
 - Pilas
