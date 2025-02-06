@@ -19,5 +19,22 @@ public class QueueWithStacks {
         firstStack.push(value);
     }
 
+    public int remove() {
+        if (secondStack.isEmpty()) {
+            while (!firstStack.isEmpty()) {
+                secondStack.push(firstStack.pop());
+            }
+        }
+        return secondStack.pop();
+    }
+
+    public int peek() {
+        if (!firstStack.isEmpty()) {
+            return firstStack.peek();
+        } else {
+            return secondStack.peek();
+        }
+    }
+
 
 }

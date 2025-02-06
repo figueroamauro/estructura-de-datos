@@ -27,6 +27,16 @@ class StackTest {
     }
 
     @Test
+    void shouldReturnSize() {
+        Stack stack = new Stack();
+        assertEquals(0, stack.size());
+        stack.push(1);
+        assertEquals(1, stack.size());
+        stack.push(2);
+        assertEquals(2, stack.size());
+    }
+
+    @Test
     void shouldThrowExceptionWhenEmpty() {
         Stack stack = new Stack();
         assertThrows(EmptyStackException.class, stack::pop);

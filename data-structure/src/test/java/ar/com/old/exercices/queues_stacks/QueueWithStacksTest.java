@@ -13,4 +13,11 @@ class QueueWithStacksTest {
         assertNotNull(queue.secondStack);
     }
 
+    @Test
+    void shouldAddElementToQueue() {
+        QueueWithStacks queue = new QueueWithStacks();
+        queue.add(1);
+        assertEquals(1, queue.peek());
+    }
+
 }
