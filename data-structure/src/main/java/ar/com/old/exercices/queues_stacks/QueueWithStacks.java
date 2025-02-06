@@ -21,11 +21,15 @@ public class QueueWithStacks {
 
     public int remove() {
         if (secondStack.isEmpty()) {
-            while (!firstStack.isEmpty()) {
-                secondStack.push(firstStack.pop());
-            }
+            dumpElementsInToSecondStack();
         }
         return secondStack.pop();
+    }
+
+    private void dumpElementsInToSecondStack() {
+        while (!firstStack.isEmpty()) {
+            secondStack.push(firstStack.pop());
+        }
     }
 
     public int peek() {
@@ -36,5 +40,13 @@ public class QueueWithStacks {
         }
     }
 
+    public int size() {
+        return firstStack.size() + secondStack.size();
+    }
+
+
+    public boolean isEmpty() {
+        return size() == 0;
+    }
 
 }

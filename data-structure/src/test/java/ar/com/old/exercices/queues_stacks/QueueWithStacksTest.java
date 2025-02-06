@@ -20,4 +20,31 @@ class QueueWithStacksTest {
         assertEquals(1, queue.peek());
     }
 
+    @Test
+    void shouldRemoveFirstElement() {
+        QueueWithStacks queue = new QueueWithStacks();
+        queue.add(1);
+        queue.add(3);
+        queue.add(5);
+
+        assertEquals(1, queue.remove());
+        assertEquals(3, queue.peek());
+    }
+
+    @Test
+    void shouldReturnQueueSize() {
+        QueueWithStacks queue = new QueueWithStacks();
+        queue.add(1);
+        queue.add(3);
+        assertEquals(2, queue.size());
+    }
+
+    @Test
+    void shouldReturnIsEmpty() {
+        QueueWithStacks queue = new QueueWithStacks();
+        assertTrue(queue.isEmpty());
+        queue.add(1);
+        assertFalse(queue.isEmpty());
+    }
+
 }
