@@ -23,6 +23,12 @@ class QueueTest {
     }
 
     @Test
+    void shouldReturnQueueSize() {
+        queue.add(1);
+        queue.add(3);
+        assertEquals(2, queue.size());
+    }
+    @Test
     void shouldRemoveFirstNode() {
         queue.add(1);
         queue.add(3);
