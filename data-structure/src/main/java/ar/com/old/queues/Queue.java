@@ -18,11 +18,10 @@ public class Queue {
         }
     }
 
-    public void remove() {
-        if (isEmpty()) {
-            throw new EmptyQueueException("La cola esta vacia");
-        }
-       first = first.next;
+    public int remove() {
+        int result = peek();
+        first = first.next;
+        return result;
     }
 
     public int peek() {

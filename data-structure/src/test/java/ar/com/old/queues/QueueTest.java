@@ -26,8 +26,10 @@ class QueueTest {
     void shouldRemoveFirstNode() {
         queue.add(1);
         queue.add(3);
+
         assertEquals(1, queue.first.value);
-        queue.remove();
+        int result = queue.remove();
+        assertEquals(1,result);
         assertEquals(3, queue.first.value);
     }
 
