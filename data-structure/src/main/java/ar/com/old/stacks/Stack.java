@@ -13,11 +13,10 @@ public class Stack {
         this.top = newNode;
     }
 
-    public void pop() {
-        if (isEmpty()) {
-            throw new EmptyStackException();
-        }
+    public int pop() {
+       int result = peek();
         this.top = this.top.next;
+        return result;
     }
 
     public int peek() {

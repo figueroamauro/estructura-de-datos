@@ -21,7 +21,8 @@ class StackTest {
         stack.push(1);
         stack.push(2);
         assertEquals(2, stack.peek());
-        stack.pop();
+        int result = stack.pop();
+        assertEquals(2, result);
         assertEquals(1, stack.peek());
     }
 
