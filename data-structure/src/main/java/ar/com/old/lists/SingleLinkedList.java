@@ -26,6 +26,18 @@ public class SingleLinkedList {
         this.size++;
     }
 
+    public void addHead(int value) {
+        if (isEmpty()) {
+            this.head = new Node(value);
+            this.tail = head;
+            this.size++;
+            return;
+        }
+        head.next = head;
+        head= new Node(value);
+        this.size++;
+    }
+
 
     public void remove(int value) {
         if (isEmpty()) {

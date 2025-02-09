@@ -51,10 +51,21 @@ public class SingleLinkedListTest {
         assertEquals(1, list.tail.value);
         list.addTail(3);
         assertEquals(2, list.size());
-        assertEquals(3, list.tail.value);
         assertEquals(1,list.head.value);
+        assertEquals(3, list.tail.value);
     }
 
+    @Test
+    void shouldAddNodeToHead() {
+        list.addHead(1);
+        assertEquals(1, list.size());
+        assertEquals(1, list.head.value);
+        assertEquals(1, list.tail.value);
+        list.addHead(3);
+        assertEquals(2, list.size());
+        assertEquals(3,list.head.value);
+        assertEquals(1, list.tail.value);
+    }
     @Test
     void shouldRemoveNode() {
         completeList();
