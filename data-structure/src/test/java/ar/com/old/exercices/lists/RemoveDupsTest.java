@@ -10,13 +10,13 @@ public class RemoveDupsTest {
     void shouldRemoveDuplicates(){
         RemoveDups removeDups = new RemoveDups();
         SingleLinkedList list = new SingleLinkedList();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(2);
-        list.add(4);
-        list.add(2);
-        list.add(5);
+        list.addTail(1);
+        list.addTail(2);
+        list.addTail(3);
+        list.addTail(2);
+        list.addTail(4);
+        list.addTail(2);
+        list.addTail(5);
 
         list.printList();
         removeDups.removeDups(list);

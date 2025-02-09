@@ -20,12 +20,12 @@ public class NthNodeToLastTest {
 
 
     private void completeList() {
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.add(6);
-        list.add(8);
-        list.add(7);
+        list.addTail(1);
+        list.addTail(2);
+        list.addTail(3);
+        list.addTail(4);
+        list.addTail(6);
+        list.addTail(8);
+        list.addTail(7);
     }
 }

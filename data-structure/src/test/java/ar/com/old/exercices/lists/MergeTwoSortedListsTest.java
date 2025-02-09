@@ -10,15 +10,15 @@ public class MergeTwoSortedListsTest {
     void shouldMergeTwoSortedLists() {
 
         SingleLinkedList list1 = new SingleLinkedList();
-        list1.add(1);
-        list1.add(2);
-        list1.add(4);
-        list1.add(6);
+        list1.addTail(1);
+        list1.addTail(2);
+        list1.addTail(4);
+        list1.addTail(6);
 
         SingleLinkedList list2 = new SingleLinkedList();
-        list2.add(2);
-        list2.add(3);
-        list2.add(5);
+        list2.addTail(2);
+        list2.addTail(3);
+        list2.addTail(5);
 
 
         MergeTwoSortedLists mergeList = new MergeTwoSortedLists();

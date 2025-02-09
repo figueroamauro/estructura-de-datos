@@ -14,19 +14,15 @@ public class SingleLinkedList {
         this.size = 0;
     }
 
-    public void add(int value) {
+    public void addTail(int value) {
         if (isEmpty()) {
             this.head = new Node(value);
             this.tail = head;
             this.size++;
             return;
         }
-        Node current = this.head;
-        while (current.next != null) {
-            current = current.next;
-        }
-        current.next = new Node(value);
-        this.tail = current.next;
+        tail.next = new Node(value);
+        tail = tail.next;
         this.size++;
     }
 
@@ -79,7 +75,8 @@ public class SingleLinkedList {
     public void printList() {
         Node current = this.head;
         while (current.next != null) {
-            System.out.println(current.value + " -> ");
+            System.out.print(current.value + " -> ");
+            current = current.next;
         }
         System.out.println(current.value);
     }
