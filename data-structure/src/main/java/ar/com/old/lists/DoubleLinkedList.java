@@ -35,6 +35,11 @@ public class DoubleLinkedList<T> {
         size++;
     }
 
+
+    public boolean isEmpty() {
+        return this.head == null;
+    }
+
     public int size() {
         return this.size;
     }

@@ -45,4 +45,12 @@ class DoubleLinkedListTest {
         list.addHead(5);
         assertEquals(2, list.size());
     }
+
+    @Test
+    void shouldReturnIsEmpty() {
+        assertTrue(list.isEmpty());
+        list.addTail(4);
+        assertFalse(list.isEmpty());
+
+    }
 }
