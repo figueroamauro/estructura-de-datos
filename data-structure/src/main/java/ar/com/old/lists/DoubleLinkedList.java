@@ -5,6 +5,7 @@ import ar.com.old.nodes.DoubleNode;
 public class DoubleLinkedList<T> {
     private DoubleNode<T> head;
     private DoubleNode<T> tail;
+    private int size;
 
     public DoubleLinkedList() {
         this.head = null;
@@ -16,18 +17,26 @@ public class DoubleLinkedList<T> {
         if (head == null) {
             this.head = newNode;
             this.tail = newNode;
+        }else {
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
         }
-        newNode.next = head;
-        head.prev = newNode;
-        head = newNode;
+        size++;
     }
 
     public void addTail(T data) {
         if (tail == null) {
             this.tail = new DoubleNode<>(data);
             this.head = tail;
+        }else {
+            tail = new DoubleNode<>(data);
         }
-        tail = new DoubleNode<>(data);
+        size++;
+    }
+
+    public int size() {
+        return this.size;
     }
 
     public DoubleNode<T> getHead() {

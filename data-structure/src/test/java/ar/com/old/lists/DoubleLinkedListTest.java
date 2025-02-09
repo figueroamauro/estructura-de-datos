@@ -33,4 +33,12 @@ class DoubleLinkedListTest {
         assertEquals(5, list.getTail().data);
         assertEquals(4, list.getHead().data);
     }
+
+    @Test
+    void shouldReturnListSize() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        list.addHead(4);
+        list.addHead(5);
+        assertEquals(2, list.size());
+    }
 }
