@@ -72,6 +72,22 @@ public class SingleLinkedList {
         size--;
     }
 
+    public void removeTail() {
+        if (head == tail) {
+            head = null;
+            tail = null;
+            size--;
+            return;
+        }
+        Node current = head;
+        while (current.next != tail) {
+            current = current.next;
+        }
+        tail = current;
+        tail.next = null;
+        size--;
+    }
+
     public boolean contains(int value) {
         Node current = this.head;
         while (current != null) {

@@ -72,12 +72,23 @@ public class SingleLinkedListTest {
         list.remove(2);
         assertEquals(2, list.size());
     }
+
     @Test
     void shouldRemoveHead() {
         completeList();
         list.removeHead();
         assertEquals(2, list.head.value);
         assertEquals(2,list.size());
+    }
+
+    @Test
+    void shouldRemoveTail() {
+        completeList();
+        list.removeTail();
+        assertEquals(2, list.tail.value);
+        assertEquals(2,list.size());
+        list.removeTail();
+        assertEquals(1,list.tail.value);
     }
 
     @Test
