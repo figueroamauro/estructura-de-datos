@@ -32,14 +32,23 @@ public class SingleLinkedListTest {
     void shouldReturnHeadValue() {
         list.add(4);
         list.add(2);
-        assertEquals(4,list.value());
+        assertEquals(4,list.head.value);
+    }
+
+    @Test
+    void shouldReturnTailValue() {
+        list.add(4);
+        list.add(2);
+        list.add(5);
+        assertEquals(5, list.tail.value);
     }
 
     @Test
     void shouldAddNode() {
         list.add(1);
         assertEquals(1, list.size());
-        assertEquals(1, list.value());
+        assertEquals(1, list.head.value);
+        assertEquals(1,list.tail.value);
     }
 
     @Test
@@ -48,6 +57,7 @@ public class SingleLinkedListTest {
         list.remove(2);
         assertEquals(2, list.size());
     }
+
 
     @Test
     void shouldThrowExceptionRemovingNode_withEmptyList(){

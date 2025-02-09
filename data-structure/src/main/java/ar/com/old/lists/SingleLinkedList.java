@@ -5,16 +5,19 @@ import ar.com.old.nodes.Node;
 
 public class SingleLinkedList {
     public Node head;
+    public Node tail;
     private int size;
 
     public SingleLinkedList() {
         this.head = null;
+        this.tail = null;
         this.size = 0;
     }
 
     public void add(int value) {
         if (isEmpty()) {
             this.head = new Node(value);
+            this.tail = head;
             this.size++;
             return;
         }
@@ -23,6 +26,7 @@ public class SingleLinkedList {
             current = current.next;
         }
         current.next = new Node(value);
+        this.tail = current.next;
         this.size++;
     }
 
@@ -72,15 +76,10 @@ public class SingleLinkedList {
         this.size = size;
     }
 
-    public int value() {
-        return this.head.value;
-    }
-
     public void printList() {
         Node current = this.head;
-        for (int i = 0; i < size-1; i++) {
-            System.out.print(current.value + " -> ");
-            current = current.next;
+        while (current.next != null) {
+            System.out.println(current.value + " -> ");
         }
         System.out.println(current.value);
     }
