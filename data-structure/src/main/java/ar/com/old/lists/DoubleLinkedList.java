@@ -22,6 +22,13 @@ public class DoubleLinkedList<T> {
         head = newNode;
     }
 
+    public void addTail(T data) {
+        if (tail == null) {
+            this.tail = new DoubleNode<>(data);
+            this.head = tail;
+        }
+        tail = new DoubleNode<>(data);
+    }
 
     public DoubleNode<T> getHead() {
         return head;
