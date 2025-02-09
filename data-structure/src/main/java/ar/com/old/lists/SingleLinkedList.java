@@ -90,13 +90,10 @@ public class SingleLinkedList {
 
     public boolean contains(int value) {
         Node current = this.head;
-        while (current != null) {
-            if (current.value == value) {
-                return true;
-            }
+        while (current != null && current.value != value) {
             current = current.next;
         }
-        return false;
+        return current != null;
     }
 
     public boolean isEmpty() {
