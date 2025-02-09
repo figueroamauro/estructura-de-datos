@@ -43,7 +43,7 @@ public class SingleLinkedList {
         if (isEmpty()) {
             throw new EmptyLinkedListException("La lista esta vacia");
         } else {
-            if (this.head.value == value) {
+            if (this.head.data == value) {
                 this.head = this.head.next;
                 this.size--;
                 return;
@@ -52,7 +52,7 @@ public class SingleLinkedList {
 
         Node current = this.head;
         while (current.next != null) {
-            if (current.next.value == value) {
+            if (current.next.data == value) {
                 current.next = current.next.next;
                 this.size--;
                 return;
@@ -90,7 +90,7 @@ public class SingleLinkedList {
 
     public boolean contains(int value) {
         Node current = this.head;
-        while (current != null && current.value != value) {
+        while (current != null && current.data != value) {
             current = current.next;
         }
         return current != null;
@@ -111,9 +111,9 @@ public class SingleLinkedList {
     public void printList() {
         Node current = this.head;
         while (current.next != null) {
-            System.out.print(current.value + " -> ");
+            System.out.print(current.data + " -> ");
             current = current.next;
         }
-        System.out.println(current.value);
+        System.out.println(current.data);
     }
 }

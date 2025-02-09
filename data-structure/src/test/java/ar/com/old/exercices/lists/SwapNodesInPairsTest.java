@@ -16,10 +16,10 @@ class SwapNodesInPairsTest {
         list.addTail(5);
         SwapNodesInPairs swapNodesInPairs = new SwapNodesInPairs();
         swapNodesInPairs.swapNodesInPairs(list);
-        assertEquals(2, list.head.value);
-        assertEquals(1, list.head.next.value);
-        assertEquals(4, list.head.next.next.value);
-        assertEquals(3, list.head.next.next.next.value);
+        assertEquals(2, list.head.data);
+        assertEquals(1, list.head.next.data);
+        assertEquals(4, list.head.next.next.data);
+        assertEquals(3, list.head.next.next.next.data);
     }
 
 }

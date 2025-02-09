@@ -28,6 +28,6 @@ public class NthNodeToLast {
             runner = runner.next;
             current = current.next;
         }
-        return current.value;
+        return current.data;
     }
 }

@@ -23,10 +23,10 @@ public class RemoveDups {
         if (current == null) {
             return;
         }
-        foundValues.add(current.value);
+        foundValues.add(current.data);
 
         while (current.next != null) {
-            boolean isDuplicated = !foundValues.add(current.next.value);
+            boolean isDuplicated = !foundValues.add(current.next.data);
             if (isDuplicated) {
                 current.next = current.next.next;
                 list.setSize(list.size() - 1);

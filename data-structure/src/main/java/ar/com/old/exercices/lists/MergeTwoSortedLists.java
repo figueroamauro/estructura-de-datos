@@ -19,7 +19,7 @@ public class MergeTwoSortedLists {
         Node current = aux;
 
         while (list1.head != null && list2.head != null) {
-            if (list1.head.value <= list2.head.value) {
+            if (list1.head.data <= list2.head.data) {
                 current.next = list1.head;
                 list1.head = list1.head.next;
             } else {

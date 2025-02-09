@@ -32,7 +32,7 @@ public class SingleLinkedListTest {
     void shouldReturnHeadValue() {
         list.addTail(4);
         list.addTail(2);
-        assertEquals(4,list.head.value);
+        assertEquals(4,list.head.data);
     }
 
     @Test
@@ -40,31 +40,31 @@ public class SingleLinkedListTest {
         list.addTail(4);
         list.addTail(2);
         list.addTail(5);
-        assertEquals(5, list.tail.value);
+        assertEquals(5, list.tail.data);
     }
 
     @Test
     void shouldAddNodeToTail() {
         list.addTail(1);
         assertEquals(1, list.size());
-        assertEquals(1, list.head.value);
-        assertEquals(1, list.tail.value);
+        assertEquals(1, list.head.data);
+        assertEquals(1, list.tail.data);
         list.addTail(3);
         assertEquals(2, list.size());
-        assertEquals(1,list.head.value);
-        assertEquals(3, list.tail.value);
+        assertEquals(1,list.head.data);
+        assertEquals(3, list.tail.data);
     }
 
     @Test
     void shouldAddNodeToHead() {
         list.addHead(1);
         assertEquals(1, list.size());
-        assertEquals(1, list.head.value);
-        assertEquals(1, list.tail.value);
+        assertEquals(1, list.head.data);
+        assertEquals(1, list.tail.data);
         list.addHead(3);
         assertEquals(2, list.size());
-        assertEquals(3,list.head.value);
-        assertEquals(1, list.tail.value);
+        assertEquals(3,list.head.data);
+        assertEquals(1, list.tail.data);
     }
     @Test
     void shouldRemoveNode() {
@@ -77,7 +77,7 @@ public class SingleLinkedListTest {
     void shouldRemoveHead() {
         completeList();
         list.removeHead();
-        assertEquals(2, list.head.value);
+        assertEquals(2, list.head.data);
         assertEquals(2,list.size());
     }
 
@@ -85,10 +85,10 @@ public class SingleLinkedListTest {
     void shouldRemoveTail() {
         completeList();
         list.removeTail();
-        assertEquals(2, list.tail.value);
+        assertEquals(2, list.tail.data);
         assertEquals(2,list.size());
         list.removeTail();
-        assertEquals(1,list.tail.value);
+        assertEquals(1,list.tail.data);
     }
 
     @Test

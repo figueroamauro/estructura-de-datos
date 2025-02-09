@@ -33,7 +33,7 @@ public class Queue {
         if (isEmpty()) {
             throw new EmptyQueueException("La cola esta vacia");
         }
-        return first.value;
+        return first.data;
     }
 
     public boolean isEmpty() {

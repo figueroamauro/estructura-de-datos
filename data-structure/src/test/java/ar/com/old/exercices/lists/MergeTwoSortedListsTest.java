@@ -23,12 +23,12 @@ public class MergeTwoSortedListsTest {
 
         MergeTwoSortedLists mergeList = new MergeTwoSortedLists();
         SingleLinkedList newList = mergeList.mergeTwoList(list1, list2);
-        assertEquals(1, newList.head.value);
-        assertEquals(2, newList.head.next.value);
-        assertEquals(2, newList.head.next.next.value);
-        assertEquals(3, newList.head.next.next.next.value);
-        assertEquals(4, newList.head.next.next.next.next.value);
-        assertEquals(5, newList.head.next.next.next.next.next.value);
-        assertEquals(6, newList.head.next.next.next.next.next.next.value);
+        assertEquals(1, newList.head.data);
+        assertEquals(2, newList.head.next.data);
+        assertEquals(2, newList.head.next.next.data);
+        assertEquals(3, newList.head.next.next.next.data);
+        assertEquals(4, newList.head.next.next.next.next.data);
+        assertEquals(5, newList.head.next.next.next.next.next.data);
+        assertEquals(6, newList.head.next.next.next.next.next.next.data);
     }
 }

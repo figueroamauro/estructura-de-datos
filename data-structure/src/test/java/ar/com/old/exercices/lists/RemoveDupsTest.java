@@ -22,10 +22,10 @@ public class RemoveDupsTest {
         removeDups.removeDups(list);
         list.printList();
         assertEquals(5, list.size());
-        assertEquals(1, list.head.value);
-        assertEquals(2, list.head.next.value);
-        assertEquals(3, list.head.next.next.value);
-        assertEquals(4, list.head.next.next.next.value);
-        assertEquals(5, list.head.next.next.next.next.value);
+        assertEquals(1, list.head.data);
+        assertEquals(2, list.head.next.data);
+        assertEquals(3, list.head.next.next.data);
+        assertEquals(4, list.head.next.next.next.data);
+        assertEquals(5, list.head.next.next.next.next.data);
     }
 }

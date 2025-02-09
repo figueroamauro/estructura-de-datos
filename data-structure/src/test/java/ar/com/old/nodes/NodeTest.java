@@ -8,7 +8,7 @@ public class NodeTest {
     @Test
     void shouldCreateNode() {
         Node node = new Node(1);
-        assertEquals(1, node.value);
+        assertEquals(1, node.data);
         assertNotNull(node);
     }
 

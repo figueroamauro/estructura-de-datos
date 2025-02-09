@@ -17,9 +17,9 @@ class QueueTest {
     @Test
     void shouldAddNodeToTail() {
         queue.add(1);
-        assertEquals(1, queue.last.value);
+        assertEquals(1, queue.last.data);
         queue.add(3);
-        assertEquals(3, queue.last.value);
+        assertEquals(3, queue.last.data);
     }
 
     @Test
@@ -33,10 +33,10 @@ class QueueTest {
         queue.add(1);
         queue.add(3);
 
-        assertEquals(1, queue.first.value);
+        assertEquals(1, queue.first.data);
         int result = queue.remove();
         assertEquals(1,result);
-        assertEquals(3, queue.first.value);
+        assertEquals(3, queue.first.data);
     }
 
     @Test

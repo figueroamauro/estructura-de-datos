@@ -21,10 +21,10 @@ public class AddTwoNumbersTest {
 
         SingleLinkedList newList = addTwoNumbers.addTwoNumbers(list1, list2);
 
-        assertEquals(6, newList.head.value);
-        assertEquals(4, newList.head.next.value);
-        assertEquals(2, newList.head.next.next.value);
-        assertEquals(7, newList.head.next.next.next.value);
+        assertEquals(6, newList.head.data);
+        assertEquals(4, newList.head.next.data);
+        assertEquals(2, newList.head.next.next.data);
+        assertEquals(7, newList.head.next.next.next.data);
 
     }
 }

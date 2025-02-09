@@ -26,17 +26,17 @@ public class AddTwoNumbers {
         while (current != null || current2 != null) {
             int sum = rest;
             if (current != null) {
-                sum += current.value;
+                sum += current.data;
                 current = current.next;
             }
             if (current2 != null) {
-                sum += current2.value;
+                sum += current2.data;
                 current2 = current2.next;
             }
 
             rest = sum / 10;
             sum = sum % 10;
-            result.value = sum;
+            result.data = sum;
 
             result.next = new Node(-1);
             result = result.next;

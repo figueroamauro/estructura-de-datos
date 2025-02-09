@@ -26,7 +26,7 @@ public class Stack {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return this.top.value;
+        return this.top.data;
     }
 
     public boolean isEmpty() {
