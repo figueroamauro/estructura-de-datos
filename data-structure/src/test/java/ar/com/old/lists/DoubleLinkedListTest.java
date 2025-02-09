@@ -1,14 +1,21 @@
 package ar.com.old.lists;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DoubleLinkedListTest {
+    DoubleLinkedList<Integer> list;
+
+    @BeforeEach
+    void init() {
+        list = new DoubleLinkedList<>();
+    }
 
     @Test
     void shouldCreateList() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        list = new DoubleLinkedList<>();
         assertNotNull(list);
         assertNull(list.getHead());
         assertNull(list.getTail());
@@ -16,7 +23,6 @@ class DoubleLinkedListTest {
 
     @Test
     void shouldAddToStart() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
         list.addHead(3);
         assertEquals(3, list.getHead().data);
         list.addHead(4);
@@ -26,7 +32,6 @@ class DoubleLinkedListTest {
 
     @Test
     void shouldAddToTail() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
         list.addTail(4);
         assertEquals(4, list.getTail().data);
         list.addTail(5);
@@ -36,7 +41,6 @@ class DoubleLinkedListTest {
 
     @Test
     void shouldReturnListSize() {
-        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
         list.addHead(4);
         list.addHead(5);
         assertEquals(2, list.size());
