@@ -61,6 +61,17 @@ public class SingleLinkedList {
         }
     }
 
+    public void removeHead() {
+        if (head == tail) {
+            head = null;
+            tail = null;
+            size--;
+            return;
+        }
+        head = head.next;
+        size--;
+    }
+
     public boolean contains(int value) {
         Node current = this.head;
         while (current != null) {
