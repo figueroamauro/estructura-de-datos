@@ -14,4 +14,13 @@ class DoubleLinkedListTest {
         assertNull(list.getTail());
     }
 
+    @Test
+    void shouldAddToStart() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        list.addHead(3);
+        assertEquals(3, list.getHead().data);
+        list.addHead(4);
+        assertEquals(4,list.getHead().data);
+    }
+
 }
