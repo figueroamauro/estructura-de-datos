@@ -61,6 +61,16 @@ public class DoubleLinkedList<T> {
         }
     }
 
+    public void print() {
+            DoubleNode<T> current = head;
+            while (current.next != null) {
+                System.out.print(current.data + " -> ");
+                current = current.next;
+        }
+        System.out.println(current.data);
+    }
+
+
     public boolean isEmpty() {
         return this.head == null;
     }
