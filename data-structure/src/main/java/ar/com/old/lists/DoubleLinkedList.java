@@ -48,6 +48,19 @@ public class DoubleLinkedList<T> {
         }
     }
 
+    public void removeHead() {
+        if (!isEmpty()) {
+            if (head == tail) {
+                head = null;
+                tail = null;
+            }else {
+                head = head.next;
+                head.prev = null;
+            }
+            size--;
+        }
+    }
+
     public boolean isEmpty() {
         return this.head == null;
     }

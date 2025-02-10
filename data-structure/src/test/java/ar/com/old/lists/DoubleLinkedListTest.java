@@ -54,7 +54,7 @@ class DoubleLinkedListTest {
     }
 
     @Test
-    void shouldRemoveHead() {
+    void shouldRemoveTail() {
         list.addHead(5);
         list.addHead(6);
         list.addHead(7);
@@ -63,7 +63,20 @@ class DoubleLinkedListTest {
         list.removeTail();
         assertEquals(4, list.size());
         assertEquals(6, list.getTail().data);
-
     }
 
+    @Test
+    void shouldRemoveHead(){
+        list.addHead(5);
+        list.addHead(6);
+        list.addHead(7);
+        list.addHead(8);
+        list.addHead(9);
+        list.removeHead();
+        assertEquals(4, list.size());
+        assertEquals(8, list.getHead().data);
+        list.removeHead();
+        assertEquals(7, list.getHead().data);
+
+    }
 }
