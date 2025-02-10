@@ -17,7 +17,7 @@ public class DoubleLinkedList<T> {
         if (head == null) {
             this.head = newNode;
             this.tail = newNode;
-        }else {
+        } else {
             newNode.next = head;
             head.prev = newNode;
             head = newNode;
@@ -29,12 +29,24 @@ public class DoubleLinkedList<T> {
         if (tail == null) {
             this.tail = new DoubleNode<>(data);
             this.head = tail;
-        }else {
+        } else {
             tail = new DoubleNode<>(data);
         }
         size++;
     }
 
+    public void removeTail() {
+        if (tail != null) {
+            if (tail == head) {
+                tail = null;
+                head = null;
+            }else {
+                tail = tail.prev;
+                tail.next = null;
+            }
+            size--;
+        }
+    }
 
     public boolean isEmpty() {
         return this.head == null;

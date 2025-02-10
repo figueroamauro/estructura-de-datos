@@ -51,6 +51,19 @@ class DoubleLinkedListTest {
         assertTrue(list.isEmpty());
         list.addTail(4);
         assertFalse(list.isEmpty());
+    }
+
+    @Test
+    void shouldRemoveHead() {
+        list.addHead(5);
+        list.addHead(6);
+        list.addHead(7);
+        list.addHead(8);
+        list.addHead(9);
+        list.removeTail();
+        assertEquals(4, list.size());
+        assertEquals(6, list.getTail().data);
 
     }
+
 }
