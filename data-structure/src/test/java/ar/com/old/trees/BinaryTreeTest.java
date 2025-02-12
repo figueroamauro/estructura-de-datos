@@ -44,7 +44,7 @@ class BinaryTreeTest {
         System.out.println();
         tree.preOrder(tree.getRoot());
         System.out.println();
-
+        tree.postOrder(tree.getRoot());
     }
 
 }

@@ -53,6 +53,13 @@ public class BinaryTree {
         }
     }
 
+    public void postOrder(TreeNode root) {
+        if (root != null) {
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.print(root.data + " ");
+        }
+    }
     public TreeNode getRoot() {
         return root;
     }
