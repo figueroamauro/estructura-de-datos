@@ -10,10 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BinaryTreeTest {
     BinaryTree tree;
+    PrintStream out;
 
     @BeforeEach
     void init() {
         tree = new BinaryTree();
+        out = System.out;
     }
 
     @Test
@@ -45,38 +47,35 @@ class BinaryTreeTest {
 
     @Test
     void shouldPrintTree_inOrder() {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PrintStream out = System.out;
-        System.setOut(new PrintStream(outputStream));
+        ByteArrayOutputStream outputStream = setSystemOut();
         addNodesToTree();
         tree.inOrder(tree.getRoot());
-        System.setOut(out);
         String expectedOut = "2 2 4 5 7 ";
-        assertEquals(expectedOut,outputStream.toString());
+        assertEquals(expectedOut, outputStream.toString());
     }
 
     @Test
     void shouldPrintTree_preOrder() {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PrintStream out = System.out;
-        System.setOut(new PrintStream(outputStream));
+        ByteArrayOutputStream outputStream = setSystemOut();
         addNodesToTree();
         tree.preOrder(tree.getRoot());
-        System.setOut(out);
         String expectedOut = "4 2 2 5 7 ";
-        assertEquals(expectedOut,outputStream.toString());
+        assertEquals(expectedOut, outputStream.toString());
     }
 
     @Test
     void shouldPrintTree_PostOrder() {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PrintStream out = System.out;
-        System.setOut(new PrintStream(outputStream));
+        ByteArrayOutputStream outputStream = setSystemOut();
         addNodesToTree();
         tree.postOrder(tree.getRoot());
-        System.setOut(out);
         String expectedOut = "2 2 7 5 4 ";
-        assertEquals(expectedOut,outputStream.toString());
+        assertEquals(expectedOut, outputStream.toString());
+    }
+
+    private ByteArrayOutputStream setSystemOut() {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+        return outputStream;
     }
 
     private void addNodesToTree() {
