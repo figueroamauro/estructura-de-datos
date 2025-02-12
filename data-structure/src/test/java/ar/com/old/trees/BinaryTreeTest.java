@@ -55,6 +55,30 @@ class BinaryTreeTest {
         assertEquals(expectedOut,outputStream.toString());
     }
 
+    @Test
+    void shouldPrintTree_preOrder() {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream out = System.out;
+        System.setOut(new PrintStream(outputStream));
+        addNodesToTree();
+        tree.preOrder(tree.getRoot());
+        System.setOut(out);
+        String expectedOut = "4 2 2 5 7 ";
+        assertEquals(expectedOut,outputStream.toString());
+    }
+
+    @Test
+    void shouldPrintTree_PostOrder() {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream out = System.out;
+        System.setOut(new PrintStream(outputStream));
+        addNodesToTree();
+        tree.postOrder(tree.getRoot());
+        System.setOut(out);
+        String expectedOut = "2 2 7 5 4 ";
+        assertEquals(expectedOut,outputStream.toString());
+    }
+
     private void addNodesToTree() {
         tree.add(4);
         tree.add(2);
