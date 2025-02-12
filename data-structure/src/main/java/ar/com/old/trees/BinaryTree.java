@@ -40,7 +40,15 @@ public class BinaryTree {
     public void inOrder(TreeNode root) {
         if (root != null) {
             inOrder(root.left);
-            System.out.println(root.data + " ");
+            System.out.print(root.data + " ");
+            inOrder(root.right);
+        }
+    }
+
+    public void preOrder(TreeNode root) {
+        if (root != null) {
+            System.out.print(root.data + " ");
+            inOrder(root.left);
             inOrder(root.right);
         }
     }

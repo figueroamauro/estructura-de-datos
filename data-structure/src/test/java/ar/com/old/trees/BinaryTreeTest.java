@@ -40,6 +40,11 @@ class BinaryTreeTest {
         assertEquals(7, tree.getRoot().right.right.data);
         assertEquals(2,tree.getRoot().left.right.data);
 
+        tree.inOrder(tree.getRoot());
+        System.out.println();
+        tree.preOrder(tree.getRoot());
+        System.out.println();
+
     }
 
 }
