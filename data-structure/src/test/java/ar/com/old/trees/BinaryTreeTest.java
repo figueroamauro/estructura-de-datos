@@ -3,6 +3,9 @@ package ar.com.old.trees;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BinaryTreeTest {
@@ -38,6 +41,18 @@ class BinaryTreeTest {
         assertEquals(5, tree.getRoot().right.data);
         assertEquals(7, tree.getRoot().right.right.data);
         assertEquals(2, tree.getRoot().left.right.data);
+    }
+
+    @Test
+    void shouldPrintTree_inOrder() {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream out = System.out;
+        System.setOut(new PrintStream(outputStream));
+        addNodesToTree();
+        tree.inOrder(tree.getRoot());
+        System.setOut(out);
+        String expectedOut = "2 2 4 5 7 ";
+        assertEquals(expectedOut,outputStream.toString());
     }
 
     private void addNodesToTree() {
