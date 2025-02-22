@@ -19,6 +19,7 @@ class InvertTreeTest {
         tree.add(3);
         tree.add(6);
         tree.add(9);
+        tree.inOrder(tree.getRoot());
         TreeNode result = invertTree.invert(tree.getRoot());
         assertEquals(4, result.data);
         assertEquals(7, result.left.data);
@@ -27,5 +28,7 @@ class InvertTreeTest {
         assertEquals(6, result.left.right.data);
         assertEquals(3, result.right.left.data);
         assertEquals(1, result.right.right.data);
+        System.out.println();
+        tree.inOrder(result);
     }
 }
